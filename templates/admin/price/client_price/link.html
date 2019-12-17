@@ -1,0 +1,19 @@
+{% load i18n static %}
+
+<input name="client-price-id" value="{{ client_price.id }}" type="hidden"/>
+
+{% with client_price.unit_cost as cost %}
+{% with 'unit cost' as cost_title %}
+{% with 'unit_cost' as inline %}
+  {% include "admin/price/client_price/discounts_table.html" %}
+{% endwith %}
+{% endwith %}
+{% endwith %}
+
+{% with client_price.system_cost as cost %}
+{% with 'system cost' as cost_title %}
+{% with 'system_cost' as inline %}
+  {% include "admin/price/client_price/discounts_table.html" %}
+{% endwith %}
+{% endwith %}
+{% endwith %}

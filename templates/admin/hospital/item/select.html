@@ -1,0 +1,32 @@
+<span class="item-specialty">
+  <select>
+    <option value="{{ item.device.product.category.specialty.id }}" selected>{{ item.device.product.category.specialty.name }}</option>
+  </select>
+  <span class="item-category">
+    <select>
+      <option value="{{ item.device.product.category.id }}" selected>{{ item.device.product.category.name }}</option>
+    </select>
+    <span class="item-manufacturer">
+      <select>
+        <option value="{{ item.device.product.manufacturer.id }}" selected>{{ item.device.product.manufacturer.display_name }}</option>
+      </select>
+      <span class="item-device">
+        <select name="{{ form_field_prefix }}device">
+          <option value="{{ item.device.id }}" selected product="{{ item.device.product.id }}">{{ item.device.product.name }}</option>
+        </select>
+        <span class="item-purchase_type">
+          <select {% if item.id %}disabled{% endif %} name="{{ form_field_prefix }}purchase_type">
+            <option class="bulk" value="{{ BULK_PURCHASE }}" {% if item.purchase_type == BULK_PURCHASE %}selected{% endif %}>Bulk</option>
+            <option class="consignment" value="{{ CONSIGNMENT_PURCHASE }}" {% if item.purchase_type == CONSIGNMENT_PURCHASE %}selected{% endif %}>Consignment</option>
+          </select>
+          <span class="item-identifier">
+            <select id="{{ widget.attrs.id }}" name="{{ widget.name }}">
+              <option value="{{ item.identifier }}" cost="{{ item.cost_type }}">{{ item.identifier }}</option>
+            </select>
+          </span>
+        </span>
+      </span>
+    </span>
+  </span>
+</span>
+

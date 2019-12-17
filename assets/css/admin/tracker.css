@@ -1,0 +1,15 @@
+.model-repcase.change-form .field-client_id {
+  display: none;
+}
+
+.model-repcase.change-form #item_set-group .has_original select {
+  width: 200px;
+}
+
+.model-repcase.change-form #item_set-group .select2-container {
+  width: 200px !important;
+}
+
+.model-repcase.change-form #item_set-group .original {
+  display: none;
+}

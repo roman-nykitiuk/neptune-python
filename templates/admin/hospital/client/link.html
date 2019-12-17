@@ -1,0 +1,5 @@
+{% if client %}
+<a href="{% url 'admin:hospital_client_change' client.id %}">
+  {{ client.name }}
+</a>
+{% endif %}

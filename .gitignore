@@ -1,0 +1,32 @@
+.env
+
+*.pyc
+
+.idea/
+.DS_Store
+*.swp
+
+assets/js/frontend.js
+assets/bundles/
+node_modules/
+webpack-stats.json
+
+static/
+media/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/config.yml
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# coverage statistics - backend
+.coverage
+htmlcov/*
+
+# coverage statistics - frontend
+.nyc_output/*
+coverage/*
+
+yarn-error.log
+fixtures/items.xls

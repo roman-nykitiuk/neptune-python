@@ -1,0 +1,30 @@
+.app-device.model-product table.discounts {
+  width: 48%;
+  margin: 10px 0 0 2%;
+  float: left;
+}
+
+.app-device.model-product table.discounts .discount-apply-type-1 {
+  background: #0080001a;
+}
+
+.app-device.model-product table.discounts .discount-apply-type-2 {
+  background: #0080003b;
+}
+
+.app-device.model-product table.discounts .discount-apply-type-3 {
+  background: #008000b0;
+}
+
+.app-device.model-product table.discounts tfoot tr, thead tr {
+  border: 1px solid #eee;
+}
+
+.app-device.model-product #clientprice_set-group .inline-related.has_original h3 b {
+  display: none;
+}
+
+.app-device .field-icon img {
+  height: 52px;
+  width: 52px;
+}

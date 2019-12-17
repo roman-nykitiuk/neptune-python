@@ -1,0 +1,7 @@
+{% if product.id %}
+<a class="related-widget-wrapper-link add-related"
+   id="product-{{ product.id }}"
+   href="{% url 'admin:device_product_change' product.id %}?_to_field=id&_popup=1">
+  {{ product.name }} features and prices
+</a>
+{% endif %}

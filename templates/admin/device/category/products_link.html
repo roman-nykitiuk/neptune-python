@@ -1,0 +1,7 @@
+{% if category %}
+<a href="{% url 'admin:device_category_change' category.id %}">
+  {% with category.product_set.count as count %}
+    {{ count }} product{{ count|pluralize }}
+  {% endwith %}
+</a>
+{% endif %}

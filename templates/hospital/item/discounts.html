@@ -1,0 +1,26 @@
+<table class="item-discounts-table">
+  <thead>
+    <td>Cost type</td>
+    <td>Name</td>
+    <td>Discount type</td>
+    <td>Percent</td>
+    <td>Value</td>
+    <td>Order</td>
+    <td>Start date</td>
+    <td>End date</td>
+  </thead>
+  <tbody>
+    {% for discount in discounts %}
+      <tr>
+        <td>{{ discount.get_cost_type_display }}</td>
+        <td>{{ discount.name }}</td>
+        <td>{{ discount.get_discount_type_display }}</td>
+        <td>{{ discount.percent }}%</td>
+        <td>${{ discount.value }}</td>
+        <td>{{ discount.order }}</td>
+        <td>{{ discount.start_date }}</td>
+        <td>{{ discount.end_date }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,24 @@
+{% load i18n static %}
+
+{% if items.count > 0 %}
+<table class="bulk-table">
+  <thead>
+    <tr>
+      <th>Serial No.</th>
+      <th>Expiry date</th>
+      <th>Purchased date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+      <tr class="bulk-item">
+        <td>{{ item.identifier }}</td>
+        <td>{{ item.expired_date }}</td>
+        <td>{{ item.purchased_date }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+  N/A
+{% endif %}

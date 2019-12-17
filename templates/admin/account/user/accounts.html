@@ -1,0 +1,19 @@
+<ul class="accounts">
+  {% for account in accounts %}
+    <li>
+      <span>{{ account.role.name }}</span>
+      at
+      <a class="change-related" href="{% url 'admin:hospital_client_change' account.client.pk %}">
+        {{ account.client.name }}
+      </a>
+      {% if account.specialties.count > 0 %}
+        <span>in</span>
+        {% for specialty in account.specialties.all %}
+          <a class="change-related specialty" href="{% url 'admin:device_specialty_change' specialty.pk %}">
+            {{ specialty.name }}
+          </a>
+        {% endfor %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

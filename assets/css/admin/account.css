@@ -1,0 +1,7 @@
+.model-user.change-list a.specialty {
+  padding: 1px 3px;
+  background: #ddd;
+  border: 1px solid #999;
+  border-radius: 3px;
+  margin-right: 8px;
+}

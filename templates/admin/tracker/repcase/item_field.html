@@ -1,0 +1,11 @@
+<div class="form-row field-{{ field.name }}">
+  <label class="{% if field.field.required %}required{% endif %}">{{ field.label }}</label>
+  {{ field }}
+  {% if field.errors %}
+    <ul class="errorlist">
+    {% for error in field.errors %}
+      <li>{{ error|escape }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+</div>

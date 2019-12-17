@@ -1,0 +1,15 @@
+.edit-client-price {
+  text-align: right;
+}
+
+.app-price.model-clientprice .inline-group .field-cost_type,
+.app-price.model-clientprice .deletelink-box,
+.app-price.model-clientprice:not(.delete-confirmation) input[type=submit]:not(.default) {
+  display: none;
+}
+
+.app-price .field-percent input:read-only,
+.app-price .field-value input:read-only {
+  color: #ccc;
+  background: #ccc;
+}

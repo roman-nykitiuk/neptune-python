@@ -1,0 +1,40 @@
+.field-image .image-upload {
+  border: 1px solid #000;
+  max-height: 200px;
+}
+
+.ui-autocomplete {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.ui-autocomplete .ui-state-active {
+  color: #fff;
+  background: #5897fb;
+}
+
+.select2-container {
+  width: 274px !important;
+}
+
+.item-discounts-table thead td {
+  background: #ddd;
+  color: #fefefe;
+}
+
+.item-discounts-table td {
+  border: 1px solid #ccc;
+}
+
+@media (max-width: 1024px) {
+  .select2-container {
+    width: 280px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .select2-container {
+    width: 100% !important;
+  }
+}

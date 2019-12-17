@@ -1,0 +1,18 @@
+.model-client .field-specialties .ui-accordion-header {
+  background-color: #e4e4e4;
+  cursor: default;
+  cursor: pointer;
+  outline: none;
+}
+
+.model-client fieldset:first-child .field-specialties ul {
+  padding: 0;
+  margin: 0;
+}
+
+.model-client fieldset:first-child .field-specialties li {
+  background: #e4e4e4;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 16px;
+}

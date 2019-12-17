@@ -1,0 +1,42 @@
+{% load i18n static %}
+
+<table class="discounts {{ inline }}-discounts-table">
+  <thead>
+    <tr>
+      <th colspan="4">
+        {% if client_price.id %}
+        <a class="related-widget-wrapper-link add-related"
+           href="{% url 'admin:price_clientprice_change' client_price.id %}?_to_field=id&_popup=1&inline={{ inline }}"
+           title="{% blocktrans %}Edit discounts{% endblocktrans %}">
+          {{ cost_title }}
+          <img src="{% static 'admin/img/icon-changelink.svg' %}" alt="Change">
+        </a>
+        {% else %}
+          {{ cost_title }}
+        {% endif %}
+      </th>
+      <th>${{ cost.original_cost }} </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for discount_info in cost.redeemed_discounts %}
+    {% with discount_info.discount as discount %}
+      {% if discount.percent or discount.value %}
+        <tr class="discount-apply-type-{{ discount.apply_type }}">
+          <td>{{ discount.get_apply_type_display }}</td>
+          <td>{{ discount.name }}</td>
+          <td>{{ discount.order }}</td>
+          <td>-{% if discount.discount_type == 1%}{{ discount.percent }}%{% else %}${{ discount.value }}{% endif %}</td>
+          <td>-${{ discount_info.value|floatformat:2 }}</td>
+        </tr>
+      {% endif %}
+    {% endwith %}
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4">Total {{ cost_title }}</td>
+      <td>${{ cost.total_cost|floatformat:2 }}</td>
+    </tr>
+  </tfoot>
+</table>

@@ -1,0 +1,49 @@
+{% load i18n staticfiles %}
+<h2>Items</h2>
+<div id="items-formset-table">
+  {{ items_formset.management_form }}
+  {% for form in items_formset %}
+    <div class="inline-related has_original repcase-item-form">
+      <h3>
+        {% if form.id.value %}
+          {{form.identifier}} expired on {{ form.initial.expired_date }}
+        {% else %}
+          New item
+        {% endif %}
+        <span class="delete">
+          <label for="{{ form.delete.auto_id }}">{{ form.delete.label }}</label>
+          {{ form.delete }}
+        </span>
+      </h3>
+      <fieldset class="module aligned">
+        {{ form.id }}
+        {% include 'admin/tracker/repcase/item_field.html' with field=form.product %}
+        {% include 'admin/tracker/repcase/item_field.html' with field=form.serial_number %}
+        {% include 'admin/tracker/repcase/item_field.html' with field=form.lot_number %}
+        {% include 'admin/tracker/repcase/item_field.html' with field=form.cost_type %}
+        {% include 'admin/tracker/repcase/item_field.html' with field=form.purchase_type %}
+        {% include 'admin/tracker/repcase/item_field.html' with field=form.purchased_date %}
+        {% include 'admin/tracker/repcase/item_field.html' with field=form.expired_date %}
+        {% include 'admin/tracker/repcase/item_field.html' with field=form.discounts %}
+        {% include 'admin/tracker/repcase/item_field.html' with field=form.is_used %}
+      </fieldset>
+    </div>
+  {% endfor %}
+
+  <div id="{{items_formset.prefix}}-empty" class="inline-related repcase-item-form empty-row">
+    <h3 class="new-item">New item</h3>
+    {% with items_formset.empty_form as form %}
+    <fieldset class=" module aligned">
+      {% include 'admin/tracker/repcase/item_field.html' with field=form.product %}
+      {% include 'admin/tracker/repcase/item_field.html' with field=form.serial_number %}
+      {% include 'admin/tracker/repcase/item_field.html' with field=form.lot_number %}
+      {% include 'admin/tracker/repcase/item_field.html' with field=form.cost_type %}
+      {% include 'admin/tracker/repcase/item_field.html' with field=form.purchase_type %}
+      {% include 'admin/tracker/repcase/item_field.html' with field=form.purchased_date %}
+      {% include 'admin/tracker/repcase/item_field.html' with field=form.expired_date %}
+      {% include 'admin/tracker/repcase/item_field.html' with field=form.discounts %}
+      {% include 'admin/tracker/repcase/item_field.html' with field=form.is_used %}
+    </fieldset>
+    {% endwith %}
+  </div>
+</div>

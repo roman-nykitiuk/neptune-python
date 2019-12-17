@@ -1,0 +1,9 @@
+<ul>
+  {% for specialty in specialties %}
+    <li>
+      <a href="{% url 'admin:device_category_changelist' %}?specialty__id={{ specialty.id }}&parent__isnull=True">
+        {{ specialty.name }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,8 @@
+{% include 'django/forms/widgets/select.html' %}
+
+{% load i18n static %}
+<a class="related-widget-wrapper-link add-related" id="add_id_children"
+    href="/master/hospital/client/add/?_to_field=id&_popup=1"
+    title="{% blocktrans %}Add another client{% endblocktrans %}">
+    <img src="{% static 'admin/img/icon-addlink.svg' %}" alt="{% trans 'Add' %}"/>
+</a>

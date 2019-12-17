@@ -1,0 +1,28 @@
+{% load i18n static %}
+{% if device.id %}
+  {% if device.hospital_number %}
+    <span>Hospital Part No: {{ device.hospital_number }}</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+  {% endif %}
+  <span>Bulk:</span>
+  <b><a class="related-widget-wrapper-link add-related" id="device-{{ device.id }}-bulk"
+     href="{% url 'admin:hospital_device_change' device.id %}?_to_field=id&_popup=1&purchase={{ BULK_PURCHASE }}&used=0">
+      {{ device.bulk }} available
+  </a></b>
+  <span> | </span>
+  <a class="related-widget-wrapper-link add-related" id="device-{{ device.id }}-used-bulk"
+     href="{% url 'admin:hospital_device_change' device.id %}?_to_field=id&_popup=1&purchase={{ BULK_PURCHASE }}&used=1">
+      {{ device.used_bulk }} used
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span>Consigment:</span>
+  <a class="related-widget-wrapper-link add-related" id="device-{{ device.id }}-consignment"
+     href="{% url 'admin:hospital_device_change' device.id %}?_to_field=id&_popup=1&purchase={{ CONSIGNMENT_PURCHASE }}&used=0">
+      {{ device.consignment }} available
+  </a>
+  <span> | </span>
+  <a class="related-widget-wrapper-link add-related" id="device-{{ device.id }}-used-consignment"
+     href="{% url 'admin:hospital_device_change' device.id %}?_to_field=id&_popup=1&purchase={{ CONSIGNMENT_PURCHASE }}&used=1">
+      {{ device.used_consignment }} used
+  </a>
+{% endif %}
